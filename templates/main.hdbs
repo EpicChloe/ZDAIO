@@ -1,0 +1,27 @@
+<section data-main>
+  <table class="table table-condensed">
+    <tbody>
+       <tr>
+        <td>Calls in the Past 7 Days</td><td class='status-cell'>{{calls.week}}</td>
+       </tr>
+       <tr>
+        <td>Calls in the Past 30 Days</td><td class='status-cell'>{{calls.month}}</td>
+       </tr>
+      {{#each lastestFiveArr}}
+        <tr class="_tooltip" data-title="{{description}}">
+          <td><a href="#/tickets/{{id}}"><b>#{{id}}</b> {{subject}}</a></td>
+
+          <td class='status-cell'>
+            <b class="status">
+              {{t "global.status"}}
+            </b>
+
+            {{t status}}
+          </td>
+        </tr>
+
+      {{/each}}
+    </tbody>
+  </table>
+</section>
+<button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{link}}');">{{text}}</a>

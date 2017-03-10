@@ -1,0 +1,13 @@
+{
+  "name": "Ring ZenDesk App",
+  "author": {
+    "name": "Chris Pittelko",
+    "email": "chris@ring.com",
+    "url": ""
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": "ticket_sidebar",
+  "version": "r100",
+  "frameworkVersion": "1.0"
+}
