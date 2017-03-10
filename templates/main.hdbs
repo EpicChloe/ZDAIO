@@ -1,4 +1,68 @@
 <section data-main>
+<div class="whole">
+  <div class="card">
+    <div class="row-fluid">
+
+      <div class="spoke"></div>
+
+      {{#if user.photo}}
+        <div class="avatar"><img src="{{user.photo.content_url}}"/></div>
+      {{else}}
+        <div class="avatar default"></div>
+      {{/if}}
+
+      {{#if user.identities.length}}
+        <div class="social pull-right">
+          {{#each user.identities}}
+            <a href="{{value}}" target="_blank" class="{{type}}"></a>
+          {{/each}}
+        </div>
+      {{/if}}
+
+      <div class="contacts">
+        <div class="name"><a href="#/tickets/{{ticketId}}/requester/tickets">{{user.name}}</a></div>
+        <div class="email">{{user.email}}</div>
+        <div class="phone">{{user.phone}}</div>
+        {{#if user.organization}}
+          <div class="organization">
+            <a href="#/tickets/{{ticketId}}/organization/tickets">{{user.organization.name}}</a>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="row-fluid">
+      <ul class="counts">
+        <li>
+          <span class="ticket_status_label new">{{t "ticket_status.new"}}</span>
+          <span class="count new">{{{tickets.new}}}</span>
+        </li>
+        <li>
+          <span class="ticket_status_label open">{{t "ticket_status.open"}}</span>
+          <span class="count open">{{{tickets.open}}}</span>
+        </li>
+        <li>
+          <span class="ticket_status_label solved">{{t "ticket_status.solved"}}</span>
+          <span class="count solved">{{{tickets.solved}}}</span>
+        </li>
+        <li>
+          <span class="ticket_status_label pending">{{t "ticket_status.pending"}}</span>
+          <span class="count pending">{{{tickets.pending}}}</span>
+        </li>
+        <li>
+          <span class="ticket_status_label hold">{{t "ticket_status.hold"}}</span>
+          <span class="count hold">{{{tickets.hold}}}</span>
+        </li>
+        <li>
+          <span class="ticket_status_label closed">{{t "ticket_status.closed"}}</span>
+          <span class="count closed">{{{tickets.closed}}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<br/>
+<div>
   <table class="table table-condensed">
     <tbody>
        <tr>
@@ -23,5 +87,6 @@
       {{/each}}
     </tbody>
   </table>
+</div>
 </section>
 <button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{adminLink}}');">{{adminLinkText}}</a>

@@ -53,5 +53,31 @@
   "pending": {
     "title": "Pending status",
     "value": "Pending"
+  },
+  "ticket_status": {
+    "new": {
+      "title": "first letter of status new",
+      "value": "n"
+    },
+    "open": {
+      "title": "first letter of status open",
+      "value": "o"
+    },
+    "pending": {
+      "title": "first letter of status pending",
+      "value": "p"
+    },
+    "hold": {
+      "title": "first letter of status hold (on hold)",
+      "value": "h"
+    },
+    "solved": {
+      "title": "first letter of status solved",
+      "value": "s"
+    },
+    "closed": {
+      "title": "first letter of status closed",
+      "value": "c"
+    }
   }
 }

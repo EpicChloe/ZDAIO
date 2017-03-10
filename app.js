@@ -7,7 +7,7 @@
         },
 
         events: {
-            'app.activated':'init',
+            'app.created':'init',
             'historyFullUserData.done': 'historyHandleUserResults',
             'requiredProperties.ready': 'historyGetUserData',
             'adminLinkFetchUser.done': 'adminLinkFetchComplete'
