@@ -24,4 +24,4 @@
     </tbody>
   </table>
 </section>
-<button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{link}}');">{{text}}</a>
+<button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{adminLink}}');">{{adminLinkText}}</a>

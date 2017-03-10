@@ -1,7 +1,9 @@
 (function() {
     return {
         data: {
-            email: ''
+            email: '',
+            lastFiveTicketArray: [],
+            callArray: []
         },
 
         events: {
@@ -50,10 +52,13 @@
             var self = this;
 
             self.data.email = data.user.email;
-            console.log(data);
+            //console.log(data);
+
+            self.displayUpdate();
         },
 
         historyHandleUserResults: function(data) {
+            var self = this;
             var lastestFive = _.first(data.tickets, 5).sort(function(a,b) {
                 var aID = a.id;
                 var bID = b.id;
@@ -63,7 +68,7 @@
                 week: 0,
                 month: 0
             };
-            console.log(data);
+            //console.log(data);
             for (var j = 0; j < data.tickets.length; j++){
                 if(data.tickets[j].via.channel === 'api' && (data.tickets[j].via.source.rel === 'inbound' || data.tickets[j].via.source.rel === 'outbound' || data.tickets[j].via.source.rel == 'voicemail')) {
                     if (moment(data.tickets[j].created_at).add(7, 'days').isBefore(/*now*/)){
@@ -81,15 +86,11 @@
                     }
                 }
             }
-            if (data.user.email != null) {
-                this.switchTo('main', {link: 'https://admin.ring.com/UI/index.html#/customers/' + data.user.email, text: 'Go to the Admin Panel'});
-            } else {
-                this.switchTo('main', {link: ' ', text: 'Malformed or Missing Email'});
-            }
-            this.switchTo('main', {
-                lastestFiveArr: lastestFive,
-                calls: calls
-            });
+
+            self.data.lastFiveTicketArray = lastestFive;
+            self.data.callArray = calls;
+
+            self.displayUpdate();
         },
 
         safeGetPath: function(propertyPath) {
@@ -99,6 +100,23 @@
                 if ( _.isFunction(obj) ) { obj = obj.call(context); }
                 return obj;
             }, this);
+        },
+
+        displayUpdate: function() {
+            var self = this,
+                templatePayload = {};
+            if (self.data.email != null) {
+                templatePayload.adminLink = 'https://admin.ring.com/UI/index.html#/customers/' + self.data.email;
+                templatePayload.adminLinkText = 'Go to the Admin Panel';
+            } else {
+                templatePayload.adminLink = '';
+                templatePayload.adminLinkText = 'Malformed or Missing Email';
+            }
+
+            templatePayload.lastestFiveArr = self.data.lastFiveTicketArray;
+            templatePayload.calls = self.data.callArray;
+
+            self.switchTo('main', templatePayload);
         },
 
         validateRequiredProperty: function(propertyPath) {
