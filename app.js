@@ -3,24 +3,26 @@
         data: {
             email: '',
             lastFiveTicketArray: [],
-            callArray: []
+            callArray: [],
+            userData: [],
+            ticketData: []
         },
 
         events: {
             'app.created':'init',
-            'historyFullUserData.done': 'historyHandleUserResults',
+            'fetchUserData.done': 'historyHandleUserResults',
             'requiredProperties.ready': 'historyGetUserData',
-            'adminLinkFetchUser.done': 'adminLinkFetchComplete'
+            'fetchUserData.done': 'adminLinkFetchComplete'
         },
 
         requests: {
-            historyFullUserData: function(userID) {
+            fetchUserData: function(userID) {
                 return {
                     url: helpers.fmt("/api/v2/users/%@/tickets/requested.json?sort_order=desc", userID),
                     dataType: 'json'
                 };
             },
-            adminLinkFetchUser: function(id){
+            fetchUserData: function(id){
                 return {
                     url: helpers.fmt("/api/v2/users/%@.json?include=identities", id),
                     type: 'GET',
@@ -34,7 +36,7 @@
             var self = this;
 
             var requesterId = self.ticket().requester().id();
-            self.ajax('adminLinkFetchUser', requesterId);
+            self.ajax('fetchUserData', requesterId);
 
             if (!data.firstLoad) {
                 return;
@@ -45,7 +47,7 @@
         },
 
         historyGetUserData: function() {
-            this.ajax( 'historyFullUserData', this.ticket().requester().id() );
+            this.ajax( 'fetchUserData', this.ticket().requester().id() );
         },
 
         adminLinkFetchComplete: function(data) {
