@@ -1,32 +1,14 @@
-<section data-main>
+<div class="active tab" id="RAIOHomeTab">
 <div class="whole">
   <div class="card">
     <div class="row-fluid">
 
-      <div class="spoke"></div>
-
-      {{#if user.photo}}
-        <div class="avatar"><img src="{{user.photo.content_url}}"/></div>
-      {{else}}
-        <div class="avatar default"></div>
-      {{/if}}
-
-      {{#if user.identities.length}}
-        <div class="social pull-right">
-          {{#each user.identities}}
-            <a href="{{value}}" target="_blank" class="{{type}}"></a>
-          {{/each}}
-        </div>
-      {{/if}}
-
       <div class="contacts">
-        <div class="name"><a href="#/tickets/{{ticketId}}/requester/tickets">{{user.name}}</a></div>
-        <div class="email">{{user.email}}</div>
+        <div><span class="name">{{user.name}}</span><span class="pull-right hidden"><button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{adminLink}}');">{{adminLinkText}}</a></span></div>
+        <div class="email{{#unless validEmail}} warning-text _tooltip{{/unless}}" {{#unless validEmail}} data-title="Invalid Email"{{/unless}}>{{user.email}}</div>
         <div class="phone">{{user.phone}}</div>
         {{#if user.organization}}
-          <div class="organization">
-            <a href="#/tickets/{{ticketId}}/organization/tickets">{{user.organization.name}}</a>
-          </div>
+          <div class="organization">{{user.organization.name}}</div>
         {{/if}}
       </div>
     </div>
@@ -42,16 +24,16 @@
           <span class="count open">{{{tickets.open}}}</span>
         </li>
         <li>
-          <span class="ticket_status_label solved">{{t "ticket_status.solved"}}</span>
-          <span class="count solved">{{{tickets.solved}}}</span>
-        </li>
-        <li>
           <span class="ticket_status_label pending">{{t "ticket_status.pending"}}</span>
           <span class="count pending">{{{tickets.pending}}}</span>
         </li>
         <li>
           <span class="ticket_status_label hold">{{t "ticket_status.hold"}}</span>
           <span class="count hold">{{{tickets.hold}}}</span>
+        </li>
+        <li>
+           <span class="ticket_status_label solved">{{t "ticket_status.solved"}}</span>
+           <span class="count solved">{{{tickets.solved}}}</span>
         </li>
         <li>
           <span class="ticket_status_label closed">{{t "ticket_status.closed"}}</span>
@@ -61,24 +43,21 @@
     </div>
   </div>
 </div>
-<br/>
 <div>
-  <table class="table table-condensed">
+  <table class="table table-condensed table-hover">
     <tbody>
        <tr>
-        <td>Calls in the Past 7 Days</td><td class='status-cell'>{{calls.week}}</td>
+        <td>Calls in the Past 7 Days</td><td>{{calls.week}}</td>
        </tr>
        <tr>
-        <td>Calls in the Past 30 Days</td><td class='status-cell'>{{calls.month}}</td>
+        <td>Calls in the Past 30 Days</td><td>{{calls.month}}</td>
        </tr>
       {{#each lastestFiveArr}}
         <tr class="_tooltip" data-title="{{description}}">
           <td><a href="#/tickets/{{id}}"><b>#{{id}}</b> {{subject}}</a></td>
 
-          <td class='status-cell'>
-            <b class="status">
-              {{t "global.status"}}
-            </b>
+          <td>
+
 
             {{t status}}
           </td>
@@ -88,5 +67,22 @@
     </tbody>
   </table>
 </div>
-</section>
-<button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{adminLink}}');">{{adminLinkText}}</a>
+</div>
+<div class="hidden tab" id="RAIOMixpanelTab">
+    Mixpanel Goes Here
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    WEEEEEEEE
+</div>
