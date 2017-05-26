@@ -2,310 +2,262 @@
     background-color: #1998d5;
     color: #FFF;
 }
-
-
 .box.apps_ticket_sidebar.app_view {
-     padding-bottom: 0px;
-     padding-top: 15px;
-     color: #333;
- }
-
+    padding-bottom: 0px;
+    padding-top: 15px;
+    color: #333;
+}
 .admin {
     margin-bottom: 15px;
-p {
-    color: #999;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    p {
+        color: #999;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .fields-list {
+        label {
+            display: inline;
+        }
+    }
+    .org-fields {
+        margin-top: 15px;
+    }
+    .back {
+        display: block;
+        float: right;
+        opacity: 0.5;
+        margin-top: 3px;
+    }
+    .save {
+        display: block;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
-
-.fields-list {
-label {
-    display: inline;
-}
-}
-
-.org-fields {
-    margin-top: 15px;
-}
-
-.back {
-    display: block;
-    float: right;
-    opacity: 0.5;
-    margin-top: 3px;
-}
-
-.save {
-    display: block;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-}
-
 .whole {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     background: #fff;
-
-.hide {
-    display: none;
-}
-
-.additional {
-    padding-left: auto;
-    padding-right: auto;
-
-.field {
-    margin-top: 15px;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 10px;
-
-textarea {
-    box-shadow: white 0px 0px 0px 0px inset;
-    padding: 0px;
-    width: 100%;
-    height: 72px;
-    box-sizing: border-box;
-    border: 0px;
-    font-size: 14px;
-}
-
-&.builtin.tags {
-ul {
-    margin-left: 0;
-}
-
-h4, p {
-    margin-top: 2px;
-}
-
-hr {
-    clear: both;
-    border: 0px;
-    margin-bottom: 0px;
-}
-
-li {
-    float: left;
-    margin: 0 3px 3px 0;
-    padding: 3px 6px 4px 6px;
-    font-size: 11px;
-    line-height: 13px;
-    display: block;
-    background: #f4f4f4;
-    color: #333;
-    min-height: 13px;
-    border-radius: 3px;
-    border: 1px solid #ddd;
-}
-}
-
-h4 {
-    font-size: 14px;
-    color:  #999;
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 14px;
-    color:  #555;
-    line-height: 1.4;
-}
-}
-}
-
-.card {
-
-&.org {
-     border-top: 1px solid #f0f0f0;
-     padding-top: 15px;
-     margin-top: 15px;
- }
-
-.cog {
-    float: right;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 12px;
-    height: 12px;
-    display: inline-block;
-    background-image: app-asset-url("ico-settings-normal.png");
-
-&:hover {
-     background-image: app-asset-url("ico-settings-hover.png");
- }
-}
-
-.social {
-    float: right;
-    margin-top: 23px;
-    left: 12px;
-
-a {
-    display: block;
-    background-image: app-asset-url("ico-social-sprite.png");
-
-&.facebook {
-     width: 5px;
-     height: 10px;
-
-&:hover {
-     background-position: 0px -11px;
- }
-}
-
-&.twitter {
-     width: 11px;
-     height: 10px;
-     background-position: -6px 0px;
-
-&:hover {
-     background-position: -6px -11px;
- }
-}
-}
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
-    float: left;
-
-&.default {
-     background-image: app-asset-url("avatar.png");
-     background-size: cover;
-     border-radius: 50px;
-
-&.org {
-     background-image: app-asset-url("org.png");
- }
-}
-
-img {
-    border-radius: 50px;
-}
-}
-
-.contacts {
-
-
-div {
-    color: black;
-    font-size: 14px;
-
-
-&.name {
-     font-size: 16px;
-     font-weight: 600;
-
-a {
-    color: #555;
-}
-}
-
-&.organization {
-a {
-    color: #999;
-}
-}
-
-&.name, &.organization {
-a {
-&:hover {
-     color: #146eaa;
- }
-}
-}
-}
-}
-
-.counts {
-    margin: 0px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-top: 1px solid #ddd;
-
-li {
-    display: inline-block;
-    font-size: 12px;
-    color: black;
-    width: 50px;
-    line-height: 1.486;
-
-a {
-    color: black;
-    position: relative;
-    top: 2px;
-}
-
-.ticket_status_label {
-    font-size: 10px;
-    line-height: 14px;
-    padding: 0;
-    padding-left: 4px;
-    padding-right: 4px;
-    height: 15px;
-    display: inline-block;
-    vertical-align: middle;
-    box-sizing: border-box;
-    white-space: nowrap;
-    text-align: center;
-    opacity: 0.6;
-    width: 15px;
-}
-}
-}
-}
-
-.expand-bar {
-    background-color: #fff;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 0px;
-    padding-bottom: 15px;
-    display: block;
-    margin-top: 30px;
-
-.arrow {
-    margin-top: 12px;
-    height: 6px;
-    min-width: 11px;
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center;
-
-&.arrow-down {
-     background-image: app-asset-url("ico-arrow-down-normal.png");
-&:hover {
-     background-image: app-asset-url("ico-arrow-down-hover.png");
- }
-}
-
-&.arrow-up {
-     background-image: app-asset-url("ico-arrow-up-normal.png");
-&:hover {
-     background-image: app-asset-url("ico-arrow-up-hover.png");
- }
-}
-}
-
-&:hover {
-     background-image: app-asset-url("hover-bg.png");
-     background-repeat: no-repeat;
-     background-position: center top;
- }
-
-span {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.4;
-}
-}
+    .hide {
+        display: none;
+    }
+    .additional {
+        padding-left: auto;
+        padding-right: auto;
+        .field {
+            margin-top: 15px;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 10px;
+            textarea {
+                box-shadow: white 0px 0px 0px 0px inset;
+                padding: 0px;
+                width: 100%;
+                height: 72px;
+                box-sizing: border-box;
+                border: 0px;
+                font-size: 14px;
+            }
+            &.builtin.tags {
+                ul {
+                    margin-left: 0;
+                }
+                h4,
+                p {
+                    margin-top: 2px;
+                }
+                hr {
+                    clear: both;
+                    border: 0px;
+                    margin-bottom: 0px;
+                }
+                li {
+                    float: left;
+                    margin: 0 3px 3px 0;
+                    padding: 3px 6px 4px 6px;
+                    font-size: 11px;
+                    line-height: 13px;
+                    display: block;
+                    background: #f4f4f4;
+                    color: #333;
+                    min-height: 13px;
+                    border-radius: 3px;
+                    border: 1px solid #ddd;
+                }
+            }
+            h4 {
+                font-size: 14px;
+                color: #999;
+                font-weight: normal;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                color: #555;
+                line-height: 1.4;
+            }
+        }
+    }
+    .card {
+        &.org {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+            margin-top: 15px;
+        }
+        .cog {
+            float: right;
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            background-image: app-asset-url("ico-settings-normal.png");
+            &:hover {
+                background-image: app-asset-url("ico-settings-hover.png");
+            }
+        }
+        .social {
+            float: right;
+            margin-top: 23px;
+            left: 12px;
+            a {
+                display: block;
+                background-image: app-asset-url("ico-social-sprite.png");
+                &.facebook {
+                    width: 5px;
+                    height: 10px;
+                    &:hover {
+                        background-position: 0px -11px;
+                    }
+                }
+                &.twitter {
+                    width: 11px;
+                    height: 10px;
+                    background-position: -6px 0px;
+                    &:hover {
+                        background-position: -6px -11px;
+                    }
+                }
+            }
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            float: left;
+            &.default {
+                background-image: app-asset-url("avatar.png");
+                background-size: cover;
+                border-radius: 50px;
+                &.org {
+                    background-image: app-asset-url("org.png");
+                }
+            }
+            img {
+                border-radius: 50px;
+            }
+        }
+        .contacts {
+            div {
+                color: black;
+                font-size: 14px;
+                &.name {
+                    font-size: 16px;
+                    font-weight: 600;
+                    a {
+                        color: #555;
+                    }
+                }
+                &.organization {
+                    a {
+                        color: #999;
+                    }
+                }
+                &.name,
+                &.organization {
+                    a {
+                        &:hover {
+                            color: #146eaa;
+                        }
+                    }
+                }
+            }
+        }
+        .counts {
+            margin: 0px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-top: 1px solid #ddd;
+            li {
+                display: inline-block;
+                font-size: 12px;
+                color: black;
+                width: 50px;
+                line-height: 1.486;
+                a {
+                    color: black;
+                    position: relative;
+                    top: 2px;
+                }
+                .ticket_status_label {
+                    font-size: 10px;
+                    line-height: 14px;
+                    padding: 0;
+                    padding-left: 4px;
+                    padding-right: 4px;
+                    height: 15px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    box-sizing: border-box;
+                    white-space: nowrap;
+                    text-align: center;
+                    opacity: 0.6;
+                    width: 15px;
+                }
+            }
+        }
+    }
+    .expand-bar {
+        background-color: #fff;
+        border-top: 1px solid #f0f0f0;
+        padding-top: 0px;
+        padding-bottom: 15px;
+        display: block;
+        margin-top: 30px;
+        .arrow {
+            margin-top: 12px;
+            height: 6px;
+            min-width: 11px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            &.arrow-down {
+                background-image: app-asset-url("ico-arrow-down-normal.png");
+                &:hover {
+                    background-image: app-asset-url("ico-arrow-down-hover.png");
+                }
+            }
+            &.arrow-up {
+                background-image: app-asset-url("ico-arrow-up-normal.png");
+                &:hover {
+                    background-image: app-asset-url("ico-arrow-up-hover.png");
+                }
+            }
+        }
+        &:hover {
+            background-image: app-asset-url("hover-bg.png");
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+        span {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.4;
+        }
+    }
 }
 .name {
     font-size: 16px;
@@ -314,7 +266,9 @@ span {
 .table {
     margin-bottom: 0;
     font-size: 12px;
-    td { text-align: right; }
+    td {
+        text-align: right;
+    }
     td:first-child {
         text-align: left;
         width: 75%;
