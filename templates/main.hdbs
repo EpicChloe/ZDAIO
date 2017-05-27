@@ -1,88 +1,129 @@
 <div class="active tab" id="RAIOHomeTab">
-<div class="whole">
-  <div class="card">
-    <div class="row-fluid">
+    <div class="whole">
+        <div class="card">
+            <div class="row-fluid">
 
-      <div class="contacts">
-        <div><span class="name">{{user.name}}</span><span class="pull-right hidden"><button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{adminLink}}');">{{adminLinkText}}</a></span></div>
-        <div class="email{{#unless validEmail}} warning-text _tooltip{{/unless}}" {{#unless validEmail}} data-title="Invalid Email"{{/unless}}>{{user.email}}</div>
-        <div class="phone">{{user.phone}}</div>
-        {{#if user.organization}}
-          <div class="organization">{{user.organization.name}}</div>
-        {{/if}}
-      </div>
-    </div>
+                <div class="contacts">
+                    <div><span class="name">{{user.name}}</span><span class="pull-right hidden"><button class="btn btn-primary btn-ring btn-large" id="RingAdminLink" onclick="window.open('{{adminLink}}');">{{adminLinkText}}</a></span></div>
+                    <div class="email{{#unless validEmail}} warning-text _tooltip{{/unless}}" {{#unless validEmail}} data-title="Invalid Email" {{/unless}}>{{user.email}}</div>
+                    <div class="phone">{{user.phone}}</div>
+                    {{#if user.organization}}
+                    <div class="organization">{{user.organization.name}}</div>
+                    {{/if}}
+                </div>
+            </div>
 
-    <div class="row-fluid">
-      <ul class="counts">
-        <li>
-          <span class="ticket_status_label new">{{t "ticket_status.new"}}</span>
-          <span class="count new">{{{tickets.new}}}</span>
-        </li>
-        <li>
-          <span class="ticket_status_label open">{{t "ticket_status.open"}}</span>
-          <span class="count open">{{{tickets.open}}}</span>
-        </li>
-        <li>
-          <span class="ticket_status_label pending">{{t "ticket_status.pending"}}</span>
-          <span class="count pending">{{{tickets.pending}}}</span>
-        </li>
-        <li>
-          <span class="ticket_status_label hold">{{t "ticket_status.hold"}}</span>
-          <span class="count hold">{{{tickets.hold}}}</span>
-        </li>
-        <li>
-           <span class="ticket_status_label solved">{{t "ticket_status.solved"}}</span>
-           <span class="count solved">{{{tickets.solved}}}</span>
-        </li>
-        <li>
-          <span class="ticket_status_label closed">{{t "ticket_status.closed"}}</span>
-          <span class="count closed">{{{tickets.closed}}}</span>
-        </li>
-      </ul>
+            <div class="row-fluid">
+                <ul class="counts">
+                    <li>
+                        <span class="ticket_status_label new">{{t "ticket_status.new"}}</span>
+                        <span class="count new">{{{tickets.new}}}</span>
+                    </li>
+                    <li>
+                        <span class="ticket_status_label open">{{t "ticket_status.open"}}</span>
+                        <span class="count open">{{{tickets.open}}}</span>
+                    </li>
+                    <li>
+                        <span class="ticket_status_label pending">{{t "ticket_status.pending"}}</span>
+                        <span class="count pending">{{{tickets.pending}}}</span>
+                    </li>
+                    <li>
+                        <span class="ticket_status_label hold">{{t "ticket_status.hold"}}</span>
+                        <span class="count hold">{{{tickets.hold}}}</span>
+                    </li>
+                    <li>
+                        <span class="ticket_status_label solved">{{t "ticket_status.solved"}}</span>
+                        <span class="count solved">{{{tickets.solved}}}</span>
+                    </li>
+                    <li>
+                        <span class="ticket_status_label closed">{{t "ticket_status.closed"}}</span>
+                        <span class="count closed">{{{tickets.closed}}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
+    <div>
+        <table class="table table-condensed table-hover">
+            <tbody>
+                <tr>
+                    <td>Calls in the Past 7 Days</td>
+                    <td>{{calls.week}}</td>
+                </tr>
+                <tr>
+                    <td>Calls in the Past 30 Days</td>
+                    <td>{{calls.month}}</td>
+                </tr>
+                {{#each lastestFiveArr}}
+                <tr class="_tooltip" data-title="{{description}}">
+                    <td><a href="#/tickets/{{id}}"><b>#{{id}}</b> {{subject}}</a></td>
+
+                    <td>
+
+                        {{t status}}
+                    </td>
+                </tr>
+
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="hidden tab" id="RAIOMixpanelUserTab">
+    <strong>Additional User Data</strong><span class="pull-right"><a class="refresh-mp-userdata"><i id="mp-user-refresh-icon" class="icon-refresh"></i></a></span>
+    {{#if MPUserProfile}}<div>
+        <table class="table table-condensed table-hover mptable">
+            <tbody>
+                {{#each MPUserProfile}}
+                <tr class="_tooltip" {{#if tooltip}}data-title="{{tooltip}}"{{/if}}>
+                    <td>
+                        {{key}}
+                    </td>
+                    <td>
+                        {{#if value}}{{value}}{{else}}-----{{/if}}
+                    </td>
+                </tr>
+
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        {{spinner "dotted"}}
+    {{/if}}
+</div>
+
+<div id="RAIOMixpanelActivityModal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Recent App Events</h3>
   </div>
-</div>
-<div>
-  <table class="table table-condensed table-hover">
-    <tbody>
-       <tr>
-        <td>Calls in the Past 7 Days</td><td>{{calls.week}}</td>
-       </tr>
-       <tr>
-        <td>Calls in the Past 30 Days</td><td>{{calls.month}}</td>
-       </tr>
-      {{#each lastestFiveArr}}
-        <tr class="_tooltip" data-title="{{description}}">
-          <td><a href="#/tickets/{{id}}"><b>#{{id}}</b> {{subject}}</a></td>
-
-          <td>
-
-
-            {{t status}}
-          </td>
-        </tr>
-
-      {{/each}}
-    </tbody>
-  </table>
-</div>
-</div>
-<div class="hidden tab" id="RAIOMixpanelTab">
-    Mixpanel Goes Here
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    WEEEEEEEE
+  <div class="modal-body">
+    {{#if MPActivity}}
+        {{#each MPActivity}}
+        <div class="set"><a>{{title}}</a>
+            <div class="content">
+                <table class="table table-condensed table-hover mptable">
+                    <tbody>
+                        {{#each dataSet}}
+                        <tr>
+                            <td>
+                                {{key}}
+                            </td>
+                            <td>
+                                {{value}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {{/each}}
+    {{else}}
+        {{spinner "dotted"}}
+    {{/if}}
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
 </div>

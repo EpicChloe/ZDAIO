@@ -1,19 +1,21 @@
 <header>
-  <h3><a class="toggle-app"><i class="icon-chevron-down"></i> {{setting "name"}}</a>
-      <div class="btn-group pull-right">
-        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="RAIOActions">
+    <h3><a class="toggle-app"><i class="icon-chevron-down"></i> {{setting "name"}}</a>
+      <div class="btn-group pull-right btn-group-xs">
+        <button type="button" class="btn btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="RAIOActions">
           Actions <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu">
-          <!--<li><a id="RAIOMixPanelTabToggle">MixPanel Data</a></li>
+        <ul class="dropdown-menu dropdown-menu-xs">
+          <li><a id="RAIOMixPanelUserTabToggle">Additional User Data</a></li>
           <li class="hidden"><a id="RAIOHomeTabToggle">Customer Data</a></li>
-          <li><a>Something else here</a></li>
-          <li role="separator" class="divider"></li>-->
+          <li><a id="RAIOMixPanelActivityToggle">View Recent App Events</a></li>
+          <li role="separator" class="divider"></li>
           <li><a id="RAIOGoToAdmin">Go to the Admin Panel &nbsp; &gt;&gt;</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a onclick="window.open('https://goo.gl/forms/oOPMkYDjYF06TNDC3')";>Send Feedback &nbsp; &gt;&gt;</a></li>
         </ul>
       </div>
   </h3>
 </header>
 <div class="app-container">
- <section data-main/>
+    <section data-main/>
 </div>
