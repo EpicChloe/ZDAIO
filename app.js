@@ -30,7 +30,7 @@
             'click #RAIOMixPanelUserTabToggle': 'RAIO_UI_MixPanelActive',
             'click .refresh-mp-userdata': 'RAIO_UI_MixPanelActive',
             'click #RAIOHomeTabToggle': 'RAIO_UI_HomeActive',
-            'click #RAIOMixPanelActivityToggle': 'RAIO_UI_MixpanelActivity',
+            'click #RAIOMixPanelActivityToggle': 'RAIO_UI_MixpanelActivity'
 
         },
 
@@ -182,23 +182,56 @@
 
             self.data.MPUserProfile = [];
 
-            if (data[0].properties['$ios_app_version'] != null) {
-                self.data.MPUserProfile.push({key:'iOS Device', value:data[0].properties['$ios_device_model']});
-                self.data.MPUserProfile.push({key:'App Version', value:data[0].properties['$ios_app_version']});
+            if(data[0] === undefined) {
+                services.notify('No Additional Data Exists.', 'error');
+            } else {
+
+                if (data[0].properties['$ios_app_version'] != null) {
+                    self.data.MPUserProfile.push({
+                        key: 'iOS Device',
+                        value: data[0].properties['$ios_device_model']
+                    });
+                    self.data.MPUserProfile.push({
+                        key: 'App Version',
+                        value: data[0].properties['$ios_app_version']
+                    });
+                }
+
+                if (data[0].properties['$android_app_version'] != null) {
+                    self.data.MPUserProfile.push({
+                        key: 'Android Model',
+                        value: data[0].properties['$android_model'],
+                        tooltip: data[0].properties['$android_manufacturer']
+                    });
+                    self.data.MPUserProfile.push({key: 'Android OS', value: data[0].properties['$android_os_version']});
+                    self.data.MPUserProfile.push({
+                        key: 'App Version',
+                        value: data[0].properties['$android_app_version']
+                    });
+                }
+
+                self.data.MPUserProfile.push({
+                    key: 'Allowing Location',
+                    value: data[0].properties['Allowing Location']
+                });
+                self.data.MPUserProfile.push({
+                    key: 'Allowing Microphone',
+                    value: data[0].properties['Allowing Microphone']
+                });
+                self.data.MPUserProfile.push({
+                    key: 'Allowing Notifications',
+                    value: data[0].properties['Allowing Notifications']
+                });
+                self.data.MPUserProfile.push({
+                    key: 'Latest Setup Device Type',
+                    value: data[0].properties['Latest Setup Device Type']
+                });
+                self.data.MPUserProfile.push({
+                    key: 'Latest Setup Result',
+                    value: data[0].properties['Latest Setup Result']
+                });
+
             }
-
-            if (data[0].properties['$android_app_version'] != null) {
-                self.data.MPUserProfile.push({key:'Android Model', value:data[0].properties['$android_model'], tooltip:data[0].properties['$android_manufacturer']});
-                self.data.MPUserProfile.push({key:'Android OS', value:data[0].properties['$android_os_version']});
-                self.data.MPUserProfile.push({key:'App Version', value:data[0].properties['$android_app_version']});
-            }
-
-            self.data.MPUserProfile.push({key:'Allowing Location', value:data[0].properties['Allowing Location']});
-            self.data.MPUserProfile.push({key:'Allowing Microphone', value:data[0].properties['Allowing Microphone']});
-            self.data.MPUserProfile.push({key:'Allowing Notifications', value:data[0].properties['Allowing Notifications']});
-            self.data.MPUserProfile.push({key:'Latest Setup Device Type', value:data[0].properties['Latest Setup Device Type']});
-            self.data.MPUserProfile.push({key:'Latest Setup Result', value:data[0].properties['Latest Setup Result']});
-
             self.$('#mp-user-refresh-icon').removeClass('spin');
             self.data.activeDisplay = 'userProfile';
             self.displayUpdate();
@@ -213,33 +246,40 @@
 
             self.data.MPActivity = [];
 
-            var lastTenEvents = _.first(data, 10).sort(function(a,b) {
-                var aID = a.time;
-                var bID = b.time;
-                return (aID === bID) ? 0 : (aID < bID) ? 1 : -1;
-            });
+            if (data[0] === undefined) {
+                services.notify('No Registered App Events Exists.', 'error');
+            } else {
 
-            _.each(lastTenEvents, function(data) {
-                self.data.MPActivity.push({
-                    title:data.name,
-                    dataSet:[
-                        {'key': 'Event Type', 'value': data.properties['Event Type']},
-                        {'key': 'OS', 'value': data.properties.$os + ': ' + data.properties.$os_version},
-                        {'key': 'App Version', 'value': data.properties.$app_version},
-                        {'key': 'Model Phone', 'value': data.properties.$manufacturer + ' ' + data.properties.$app_version},
-                        {'key': 'Carrier', 'value': data.properties.$carrier},
-                        {'key': 'Radio', 'value': data.properties.$radio},
-                        {'key': 'Wifi', 'value': data.properties.$wifi},
-                        {'key': 'Allowing Location', 'value': data.properties['Allowing Location']},
-                        {'key': 'Allowing Microphone', 'value': data.properties['Allowing Microphone']},
-                        {'key': 'Allowing Notifications', 'value': data.properties['Allowing Notifications']}
-                    ]
+                var lastTenEvents = _.first(data, 10).sort(function (a, b) {
+                    var aID = a.time;
+                    var bID = b.time;
+                    return (aID === bID) ? 0 : (aID < bID) ? 1 : -1;
                 });
-            }.bind(self));
 
-            console.log(self.data.MPActivity);
+                _.each(lastTenEvents, function (data) {
+                    self.data.MPActivity.push({
+                        title: data.name,
+                        dataSet: [
+                            {'key': 'Event Type', 'value': data.properties['Event Type']},
+                            {'key': 'OS', 'value': data.properties.$os + ': ' + data.properties.$os_version},
+                            {'key': 'App Version', 'value': data.properties.$app_version},
+                            {
+                                'key': 'Model Phone',
+                                'value': data.properties.$manufacturer + ' ' + data.properties.$app_version
+                            },
+                            {'key': 'Carrier', 'value': data.properties.$carrier},
+                            {'key': 'Radio', 'value': data.properties.$radio},
+                            {'key': 'Wifi', 'value': data.properties.$wifi},
+                            {'key': 'Allowing Location', 'value': data.properties['Allowing Location']},
+                            {'key': 'Allowing Microphone', 'value': data.properties['Allowing Microphone']},
+                            {'key': 'Allowing Notifications', 'value': data.properties['Allowing Notifications']}
+                        ]
+                    });
+                }.bind(self));
 
-            self.displayUpdate('userActivity');
+                self.displayUpdate('userActivity');
+
+            }
         },
 
         failureHandlerMPEmail: function() {
@@ -332,7 +372,19 @@
 
         RAIO_UI_Reset: function() {
             var self = this;
-            self.data.activeDisplay = '';
+            self.data = {
+                visible: '',
+                email: '',
+                validEmail: true,
+                lastFiveTicketArray: [],
+                callArray: [],
+                userData: [],
+                ticketCount: [],
+                MPUserProfile: [],
+                MPActivity: [],
+                appSettings: {},
+                activeDisplay: ''
+            };
             self.displayUpdate();
         },
 
@@ -370,6 +422,8 @@
         },
 
         RAIO_UI_HomeActive: function(event) {
+            var self = this;
+
             event.preventDefault();
             this.$('.tab').addClass('hidden');
             this.$('#RAIOHomeTab').removeClass('hidden');

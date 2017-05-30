@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b877b500-b2f7-4a9d-8ba0-558bb6fc9c18" name="Default" comment="Major Updates&#10;All Data Displayed&#10;Condensed Text for Call/Ticket Data&#10;Moved Button to Header and transformed to drop-down&#10;App can be toggled and state is saved per user/browser&#10;Mixpanel Data is now available for parsing&#10;Custom tabbed interface created&#10;Email validation in-place and excludes @talkdesk.com emails">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/RingAIO.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.css" afterPath="$PROJECT_DIR$/app.css" />
+    <list default="true" id="b877b500-b2f7-4a9d-8ba0-558bb6fc9c18" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layout.hdbs" afterPath="$PROJECT_DIR$/templates/layout.hdbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.hdbs" afterPath="$PROJECT_DIR$/templates/main.hdbs" />
     </list>
     <ignored path="RingAIO.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +28,8 @@
       <file leaf-file-name="changelog.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/changelog.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -84,8 +78,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
+            <state relative-caret-position="2246">
+              <caret line="387" column="33" lean-forward="true" selection-start-line="387" selection-start-column="33" selection-end-line="387" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -94,8 +88,8 @@
       <file leaf-file-name="layout.hdbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/layout.hdbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="44" lean-forward="true" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="44" />
+            <state relative-caret-position="204">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -153,8 +147,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/settings.js" />
         <option value="$PROJECT_DIR$/app.css" />
-        <option value="$PROJECT_DIR$/templates/layout.hdbs" />
         <option value="$PROJECT_DIR$/templates/main.hdbs" />
+        <option value="$PROJECT_DIR$/templates/layout.hdbs" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/changelog.txt" />
       </list>
@@ -248,12 +242,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../RA-Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/settings/settings.json&#10;C:/Users/Chloe/Documents/ZD Apps/ZDAIO/changelog.txt&#10;true" />
+    <property name="add_unversioned_files" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
   </component>
   <component name="RecentsManager">
@@ -373,7 +367,7 @@
       <workItem from="1495130523694" duration="628000" />
       <workItem from="1495131759234" duration="31839000" />
       <workItem from="1495807654072" duration="867000" />
-      <workItem from="1495809165634" duration="27086000" />
+      <workItem from="1495809165634" duration="31519000" />
     </task>
     <task id="LOCAL-00001" summary="Major Updates&#10;All Data Displayed&#10;Condensed Text for Call/Ticket Data&#10;Moved Button to Header and transformed to drop-down&#10;App can be toggled and state is saved per user/browser&#10;Mixpanel Data is now available for parsing&#10;Custom tabbed interface created&#10;Email validation in-place and excludes @talkdesk.com emails">
       <created>1495260420405</created>
@@ -382,18 +376,34 @@
       <option name="project" value="LOCAL" />
       <updated>1495260420405</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated README.md&#10;Added settings module to handle auth tokens (added to .gitignore)&#10;Changed layout so Mixpanel data is in separate tabs&#10;Cleaned up handlebar templates&#10;Added User Activity Modal&#10;Added Feedback to Actions Menu&#10;Resized text in Actions Menu&#10;Added Accordion Support&#10;Added Mixpanel User Activity to Modal&#10;Fixed issue with Notify Service interfering with other Bootstrap Modals&#10;Fixed Issue with app state persisting between tickets">
+      <created>1495893218268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1495893218268</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81913000" />
+    <option name="totallyTimeSpent" value="86346000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27201784" sideWeight="0.50632244" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.49578503" order="7" side_tool="false" content_ui="tabs" />
@@ -470,7 +480,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Major Updates&#10;All Data Displayed&#10;Condensed Text for Call/Ticket Data&#10;Moved Button to Header and transformed to drop-down&#10;App can be toggled and state is saved per user/browser&#10;Mixpanel Data is now available for parsing&#10;Custom tabbed interface created&#10;Email validation in-place and excludes @talkdesk.com emails" />
-    <option name="LAST_COMMIT_MESSAGE" value="Major Updates&#10;All Data Displayed&#10;Condensed Text for Call/Ticket Data&#10;Moved Button to Header and transformed to drop-down&#10;App can be toggled and state is saved per user/browser&#10;Mixpanel Data is now available for parsing&#10;Custom tabbed interface created&#10;Email validation in-place and excludes @talkdesk.com emails" />
+    <MESSAGE value="Updated README.md&#10;Added settings module to handle auth tokens (added to .gitignore)&#10;Changed layout so Mixpanel data is in separate tabs&#10;Cleaned up handlebar templates&#10;Added User Activity Modal&#10;Added Feedback to Actions Menu&#10;Resized text in Actions Menu&#10;Added Accordion Support&#10;Added Mixpanel User Activity to Modal&#10;Fixed issue with Notify Service interfering with other Bootstrap Modals&#10;Fixed Issue with app state persisting between tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md&#10;Added settings module to handle auth tokens (added to .gitignore)&#10;Changed layout so Mixpanel data is in separate tabs&#10;Cleaned up handlebar templates&#10;Added User Activity Modal&#10;Added Feedback to Actions Menu&#10;Resized text in Actions Menu&#10;Added Accordion Support&#10;Added Mixpanel User Activity to Modal&#10;Fixed issue with Notify Service interfering with other Bootstrap Modals&#10;Fixed Issue with app state persisting between tickets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -778,14 +789,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/updating.hdbs" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -803,10 +806,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="23" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/settings.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="56" lean-forward="false" selection-start-line="0" selection-start-column="56" selection-end-line="0" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.hdbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="106" column="32" lean-forward="false" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.hdbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -827,34 +854,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.hdbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="44" lean-forward="true" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.hdbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="106" column="32" lean-forward="false" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="76" lean-forward="false" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
+        <state relative-caret-position="2246">
+          <caret line="387" column="33" lean-forward="true" selection-start-line="387" selection-start-column="33" selection-end-line="387" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/changelog.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="30" />
           <folding />
         </state>
       </provider>

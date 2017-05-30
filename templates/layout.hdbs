@@ -10,6 +10,7 @@
           <li><a id="RAIOMixPanelActivityToggle">View Recent App Events</a></li>
           <li role="separator" class="divider"></li>
           <li><a id="RAIOGoToAdmin">Go to the Admin Panel &nbsp; &gt;&gt;</a></li>
+          <li><a onclick="window.open('http://ringagents.speedtestcustom.com')";">Agent Speed Test &nbsp; &gt;&gt;</a></li>
           <li role="separator" class="divider"></li>
           <li><a onclick="window.open('https://goo.gl/forms/oOPMkYDjYF06TNDC3')";>Send Feedback &nbsp; &gt;&gt;</a></li>
         </ul>
