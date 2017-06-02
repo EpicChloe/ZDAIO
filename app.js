@@ -250,7 +250,7 @@
                 services.notify('No Registered App Events Exists.', 'error');
             } else {
 
-                var lastTenEvents = _.first(data, 10).sort(function (a, b) {
+                var lastTenEvents = _.first(data, 15).sort(function (a, b) {
                     var aID = a.time;
                     var bID = b.time;
                     return (aID === bID) ? 0 : (aID < bID) ? 1 : -1;
